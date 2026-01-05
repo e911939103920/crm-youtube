@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#FAFAFA] font-normal transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .card {
+    @apply bg-white dark:bg-[#0F0F0F] border border-[#E5E5E5] dark:border-[#2A2A2A];
+  }
+  
+  .card-hover {
+    @apply hover:bg-[#FAFAFA] dark:hover:bg-[#141414] transition-colors;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .btn-primary {
+    @apply bg-black dark:bg-white text-white dark:text-black font-medium hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-[#0F0F0F] border border-[#E5E5E5] dark:border-[#2A2A2A] text-[#0A0A0A] dark:text-[#FAFAFA] hover:bg-[#FAFAFA] dark:hover:bg-[#141414] transition-colors;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #050816 0%, #0F172A 50%, #1E293B 100%);
+  }
+
+  .light-gradient {
+    background: linear-gradient(135deg, #F7F8FB 0%, #FFFFFF 100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes orbital {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-orbital {
+  animation: orbital 120s linear infinite;
+}
