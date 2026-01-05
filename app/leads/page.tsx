@@ -14,7 +14,7 @@ import Papa from 'papaparse'
 export default function LeadsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const { leads, isAuthenticated, addLead, updateLead, deleteLead, undoDeleteLead, importLeads, fetchLeads } = useStore()
+  const { leads, isAuthenticated, addLead, updateLead, deleteLead, undoDeleteLead, importLeads, fetchLeads, savedLists, fetchSavedLists, addSavedList, deleteSavedList } = useStore()
   const { notifications, success, error, dismissNotification } = useNotifications()
   const { loading: authLoading } = useAuth()
   
