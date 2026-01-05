@@ -173,16 +173,20 @@ export default function LeadsPage() {
               // Ensure required fields
               if (!mapped.name || !mapped.email) return null
               
-              return {
+              const lead: Omit<Lead, 'id' | 'createdAt' | 'updatedAt' | 'user_id'> = {
                 name: mapped.name || '',
                 company: mapped.company || '',
                 email: mapped.email || '',
-                phone: mapped.phone || '',
                 value: mapped.value || 0,
                 stage: mapped.stage || 'New',
                 tags: mapped.tags || [],
-                notes: mapped.notes || '',
               }
+              
+              // Add optional fields only if they have values
+              if (mapped.phone) lead.phone = mapped.phone
+              if (mapped.notes) lead.notes = mapped.notes
+              
+              return lead
             })
             .filter((lead): lead is Omit<Lead, 'id' | 'createdAt' | 'updatedAt' | 'user_id'> => lead !== null)
 
