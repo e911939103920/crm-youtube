@@ -205,7 +205,7 @@ export default function LeadsPage() {
           error('Failed to import leads')
         }
       },
-      error: (error) => {
+      error: (parseError) => {
         error('Failed to read CSV file')
       },
     })
