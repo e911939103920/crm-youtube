@@ -40,10 +40,6 @@ export default function DashboardPage() {
     return null
   }
 
-  if (!isAuthenticated) {
-    return null
-  }
-
   // Calculate KPIs
   const totalLeads = leads.length
   const convertedLeads = leads.filter((l) => l.stage === 'Won').length

@@ -184,7 +184,7 @@ export default function LeadsPage() {
                 notes: mapped.notes || '',
               }
             })
-            .filter(Boolean)
+            .filter((lead): lead is Omit<Lead, 'id' | 'createdAt' | 'updatedAt' | 'user_id'> => lead !== null)
 
           await importLeads(importedLeads)
           setUploadProgress(100)
